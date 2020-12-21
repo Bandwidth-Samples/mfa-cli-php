@@ -4,8 +4,8 @@ require __DIR__ . '/../vendor/autoload.php';
 
 $config = new BandwidthLib\Configuration(
     array(
-        'twoFactorAuthBasicAuthUserName' => getenv("BANDWIDTH_API_USER"),
-        'twoFactorAuthBasicAuthPassword' => getenv("BANDWIDTH_API_PASSWORD"),
+        'twoFactorAuthBasicAuthUserName' => getenv("BANDWIDTH_USERNAME"),
+        'twoFactorAuthBasicAuthPassword' => getenv("BANDWIDTH_PASSWORD"),
     )
 );
 
@@ -20,12 +20,8 @@ $recipient_phone_number = readline("Please enter your phone number in E164 forma
 
 $delivery_method = readline("Select your method to receive your 2FA request. Please enter 'voice' or 'messaging': ");
 
-//$delivery_method = "messaging";
-//$delivery_method = "voice";
 
 if (strcmp($delivery_method, "messaging") == 0) {
-
-  $method = 'messaging';
 
   $fromPhone = $BANDWIDTH_PHONE_NUMBER;
   $toPhone = $recipient_phone_number;
@@ -59,8 +55,6 @@ if (strcmp($delivery_method, "messaging") == 0) {
   echo $strn;
 
 } elseif (strcmp($delivery_method, "voice") == 0) {
-
-  $method = 'voice';
 
   $fromPhone = $BANDWIDTH_PHONE_NUMBER;
   $toPhone = $recipient_phone_number;
