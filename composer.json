@@ -1,5 +1,10 @@
 {
+    "name": "bandwidth-samples/mfa-cli-php",
+    "description": "Bandwidth Sample App for Multi-Factor Authentication",
+    "type": "project",
+    "license": "MIT",
     "require": {
-        "bandwidth/sdk": "^2.14"
+        "php": "^8.1",
+        "bandwidth/sdk": "14.0.1"
     }
 }
